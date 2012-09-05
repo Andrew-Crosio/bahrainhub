@@ -1,9 +1,7 @@
 <div class= "create-voice" data-hansel-component-id="login-signup">
   <ul>
     <li class="addVoice">
-      <%= link_to_if current_user, 'Add A Voice', new_admin_voice_path, :class => "button #{current_user.nil? ? 'voicebtn' : 'voicelogin'}" do %>
-        <a class="button voicebtn" href="#">Add A Voice</a>
-      <% end %>
+      <%= link_to 'About', about_path, :class => 'button voicelogin' %>
       <% unless current_user %>
         <div class="tooltip">
           <div class="tooltip-positioner">
