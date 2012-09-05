@@ -10,23 +10,18 @@ gem 'rails', '3.2.3'
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
-
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
   gem 'uglifier', '~> 1.2.4'
 end
 
 gem 'jquery-rails'
-gem 'mysql2'
+gem 'pg'
 gem 'rake'
-gem 'linecache19'
 gem 'rails3-generators'
 gem 'fog'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
 gem 'hoptoad_notifier'
-
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'httparty'
 gem 'carrierwave'
@@ -40,6 +35,7 @@ gem 'memcache-client'
 gem 'acts_as_list'
 
 group :development, :test do
+  gem 'linecache19'
   gem 'ruby-debug19'
   gem 'shoulda'
   gem 'rspec-rails'
