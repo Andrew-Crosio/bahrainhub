@@ -56,7 +56,7 @@
                 <label class="blog-widget-label" for="blog-widget-scope-all"><input id="blog-widget-scope-all" class="widget-scope" type="radio" value="all" name="scope" />All voices</label>
                 <p><label class="blog-widget-label" for="blog-widget-show-description"><input id="blog-widget-show-description" class="description-checkbox" type="checkbox" value="1" name="description" />Include description</label></p>
                 <p><label class="blog-widget-label" for="blog-widget-show-rtl"><input id="blog-widget-show-rtl" class="rtl-checkbox" type="checkbox" value="1" name="rtl" />Right to Left</label></p>
-                <textarea  class="blog-widget-textarea" data-template="<iframe src='http://crowdvoice.org/widget/<%= @voice.slug %>?size={{size}}&scope={{scope}}&show_description={{show_description}}&rtl={{rtl}}' scrolling='no' frameborder='0' style='overflow:hidden; border:none; width:100%; height:{{height}}px;' allowTransparency='true'></iframe>"><iframe src='http://crowdvoice.org/widget/<%= @voice.slug %>?size=small&scope=this&show_description=0&rtl=0' scrolling='no' frameborder='0' style='overflow:hidden; border:none; width:100%;height:400px;' allowTransparency='true'></iframe>
+                <textarea  class="blog-widget-textarea" data-template="<iframe src='http://bahrainhub.org/widget/<%= @voice.slug %>?size={{size}}&scope={{scope}}&show_description={{show_description}}&rtl={{rtl}}' scrolling='no' frameborder='0' style='overflow:hidden; border:none; width:100%; height:{{height}}px;' allowTransparency='true'></iframe>"><iframe src='http://bahrainhub.org/widget/<%= @voice.slug %>?size=small&scope=this&show_description=0&rtl=0' scrolling='no' frameborder='0' style='overflow:hidden; border:none; width:100%;height:400px;' allowTransparency='true'></iframe>
                 </textarea>
               </fieldset>
             </form>
@@ -92,7 +92,7 @@
                         <textarea id="image_description" class="link-textarea" name="post[image_description]"></textarea>
                     </div>
                     <span class="media-type-subtitle">Also you can send images to this email:</span>
-                    <%= mail_to "voice+#{@voice.id}@crowdvoice.org", nil, :class => 'media-type-link', :encode => "javascript" %>
+                    <%= mail_to "voice+#{@voice.id}@bahrainhub.org", nil, :class => 'media-type-link', :encode => "javascript" %>
                     <em class="media-type-notice">(max-size for attachments is 2mb.)</em>
                   </div>
                 </div>
