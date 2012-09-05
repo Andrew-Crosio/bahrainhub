@@ -3,16 +3,16 @@ header {position: fixed; width: 100%; z-index: 1; top: 2}
 .hgroup-current-image {border-bottom-width: 0px; float: left; width: 100%}
 .gaza-header.top {background-position: top; height: 63px; width: 267px; float: right}
 .gaza-header.bottom {background-position: -1px bottom}
-.logo-header {float:right; margin-top:8px; margin-right:39px}
-.logo-container {display:block; clear:both; overflow:hidden; width:100%}
+.logo-header {width: 100%; text-align: center; margin-top:8px; margin-right:39px}
+.logo-container {display:block; clear:both; overflow:hidden; width: 182px; text-align: center; margin: 0 auto;}
 .clear {clear: both}
 .main-header {min-width:800px;}
 .panel-container{border-right-width: 1px;}
 hgroup {float: left; width: 267px; height: 63px; border-right-width: 1px; position:fixed; z-index: 5; overflow: hidden}/* padding: 8px 0 0 39px; width:228px */
-.crowdvoice-logo {float: left; width: 169px; height: 25px; margin-right:4px}
+.crowdvoice-logo {float: left; width: 160px; height: 25px; margin-right:4px}
 .crowdvoice-logo.gaza {float: left; width: 176px; height: 25px; margin-right:4px}
 .crowdvoice-about {float: left; height: 18px; width: 18px; margin-top: 3px}
-.crowdvoice-slogan {float: left; font-size: 14px; line-height: 1em; padding: 5px 0 9px}
+.crowdvoice-slogan {width: 100%; text-align: center; font-size: 12px; line-height: 1em; padding: 5px 0 9px;}
 .theme-image {width: 100%; height: 3px}/* Update:ADD height atrribute:63px*/
 .theme-image > .top-line.gaza {height: 3px; border-width: 0}
 .theme-image > .top-line {height: 1px; border-width: 1px 0}
