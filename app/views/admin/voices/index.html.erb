@@ -21,13 +21,13 @@
     </thead>
     <tbody>
       <% for voice in @voices %>
-      <tr>
+      <tr onmouseout="$('.deletebutton').hide();" onmouseover="$('#<%= voice.id %>deletebutton').show();">
         <td class="title"><%= link_to voice.title, voice %></td>
         <td><%= voice.posts.size %></td>
         <td><%= voice.location %></td>
         <td class="actions">
           <%= link_to "Edit", edit_admin_voice_path(voice), :class => 'action edit' %>
-          <%= link_to "Delete", [:admin, voice], :confirm => "Are you sure?", :method => :delete, :class => 'action delete' %>
+          <%= button_to "Delete", admin_voice_path(voice), :confirm => "Are you sure?", :method => :delete, :class => 'action delete deletebutton', :id => "#{voice.id}deletebutton", :style => 'display: none;' %>
         </td>
       </tr>
       <% end %>
