@@ -17,7 +17,7 @@ function initializeMap() {
     var script = $('<script type="text/javascript" />');
     script.attr('src', "/javascripts/cv/map.js");
     $('head').append(script);
-    map = new Map('.map-container');
+    map = new Map('.map-container', {center: Map.at(26.0275, 50.5500)});
     Map.getLocations(function (locations) {
         for (var i = 0; i < locations.length; i++) {
             var loc = locations[i].location,
