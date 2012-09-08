@@ -3,7 +3,7 @@ class Voice < ActiveRecord::Base
   THEMES = APP_CONFIG[:voice_themes]
   BACKGROUND_VERSIONS = %w[square wide none]
 
-  attr_accessible :title, :description, :theme, :logo_link,
+  attr_accessible :title, :description, :theme, :logo_link, :logo_cache,
     :latitude, :longitude, :location, :map_url, :twitter_search, :background,
     :featured, :city_or_village, :media_coverage, :archived, :logo, :sponsor_slogan, :sponsor, :rss_feed, :last_rss, :last_tweet, :approved,
     :background_version, :square_background, :wide_background, :background_cache, :wide_background_cache, :square_background_cache
