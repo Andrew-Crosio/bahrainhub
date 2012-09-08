@@ -1,0 +1,36 @@
+development: &development
+  flickr_key: "123"
+  yfrog_key: "123abc"
+  voice_themes:
+    - blue
+    - green
+    - yellow
+    - orange
+    - red
+  s3_access_key: 'access_key'
+  s3_access_secret: 'secret_key'
+  email:    # Automatic Mail Hanlding, configuration file.
+    username:  "noreply@bahrainhub.org"
+    password:  "secret"
+    host:  "imap.gmail.com"
+    port:  993
+    ssl: true
+    look_in_folder: inbox                       # (remote) label_of_the_messages_whose_attachments_you_want_downloaded'
+    downloaded_mails_folder: downloaded_mail    # (remote) move downloaded mails to folder? Note: Make sure to create this folder before running the script!
+    invalidated_mails_folder: invalidated_mail  # (remote) folder to place all scanned/downloaded mail
+    max_mail_size: 2097152
+    log_file: log/imap.log                      # (local) filename to use for log
+  default_settings:
+    positive_threshold: 1
+    negative_threshold: -1
+    posts_per_page: 30
+
+test:
+  <<: *development
+
+staging:
+  <<: *development
+
+production:
+  <<: *development
+
