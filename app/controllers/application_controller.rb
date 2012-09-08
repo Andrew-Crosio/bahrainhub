@@ -17,11 +17,12 @@ class ApplicationController < ActionController::Base
   #
   #`@featured_voices`, `@archived_voices`, `@non_featured_voices`, `@unapproved_voices` and `@all_voices`
   def find_voices
-    @featured_voices = Voice.featured
+    @cities_villages = Voice.city_or_village
+    @media_coverage = Voice.media_coverage
     @archived_voices = Voice.archived
-    @non_featured_voices = Voice.non_featured
     @unapproved_voices = Voice.unapproved
     @all_voices = @unapproved_voices #TODO: Remove this and just use unapproved.
+
   end
 
   # Redirects the user to the login page if there is no current session.

@@ -24,22 +24,22 @@
     <div class="scroller">
         <div class="searchable">
           <% cache('aside_menu_bar') do %>
-            <% unless @featured_voices.empty? %>
+            <% unless @cities_villages.empty? %>
               <div class="voice-sec">
-                <h2>Featured Voices</h2>
+                <h2>Cities & Villages - المدن و القرى</h2>
                 <span class="accordion">more</span>
               </div>
               <ul class="voice-feature">
-                <%= render :partial => 'voices/voices', :object => @featured_voices.order('created_at desc') %>
+                <%= render :partial => 'voices/voices', :object => @cities_villages.order('created_at desc') %>
               </ul>
             <% end %>
-            <% unless @non_featured_voices.empty? %>
+            <% unless @media_coverage.empty? %>
               <div class="voice-sec">
-                <h2>Current Voices</h2>
+                <h2>Media Coverage - التغطية الإعلامية</h2>
                 <span class="accordion">more</span>
               </div>
-              <ul class="voice-all">
-                <%= render :partial => 'voices/voices', :object => @all_voices %>
+              <ul class="voice-feature">
+                <%= render :partial => 'voices/voices', :object => @media_coverage.order('created_at desc') %>
               </ul>
             <% end %>
             <% unless @archived_voices.empty? %>

@@ -72,7 +72,7 @@ module ApplicationHelper
   def chartbeat
     code = <<-eos
       <script type="text/javascript">
-      var _sf_async_config={uid:13467,domain:"crowdvoice.org"};
+      var _sf_async_config={uid:13467,domain:"bahrainhub.org"};
       (function(){
         function loadChartbeat() {
           window._sf_endpt=(new Date()).getTime();

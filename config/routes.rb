@@ -35,7 +35,7 @@ OpenCrowdvoice::Application.routes.draw do
 
   match "/widget/:id" => "widgets#show"
 
- resources :voices, :path => "/", :only => [:index, :show] do
+ resources :voices, :path => "/", :only => [:show] do
    get 'locations' => 'voices#locations', :constraints => { :format => 'json' }, :on => :collection
    resources :posts, :only => [:show, :create, :destroy] do
      resources :votes, :only => [:create, :destroy], :shallow => true

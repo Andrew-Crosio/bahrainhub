@@ -5,7 +5,7 @@ class Voice < ActiveRecord::Base
 
   attr_accessible :title, :description, :theme, :logo_link,
     :latitude, :longitude, :location, :map_url, :twitter_search, :background,
-    :featured, :archived, :logo, :sponsor_slogan, :sponsor, :rss_feed, :last_rss, :last_tweet, :approved,
+    :featured, :city_or_village, :media_coverage, :archived, :logo, :sponsor_slogan, :sponsor, :rss_feed, :last_rss, :last_tweet, :approved,
     :background_version, :square_background, :wide_background, :background_cache, :wide_background_cache, :square_background_cache
 
   mount_uploader :logo, LogoUploader
@@ -35,6 +35,8 @@ class Voice < ActiveRecord::Base
   scope :current, approved.not_archived
   scope :featured, current.where(:featured => true).order("home_position")
   scope :non_featured, current.where(:featured => false)
+  scope :city_or_village, where(:city_or_village => true)
+  scope :media_coverage, where(:media_coverage => true)
 
   acts_as_list :column => 'home_position'
 

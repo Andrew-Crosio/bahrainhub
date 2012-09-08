@@ -1,5 +1,5 @@
 class NotifierMailer < ActionMailer::Base
-  default :from => 'Crowdvoice <subscriptions@crowdvoice.org>'
+  default :from => 'Crowdvoice <subscriptions@bahrainhub.org>'
 
   layout 'email'
 
@@ -16,7 +16,7 @@ class NotifierMailer < ActionMailer::Base
     @user = user
     @subject = 'Reset password confirmation'
     @title = 'RESET PASSWORD INSTRUCTIONS FOR CROWDVOICE ACCOUNT'
-    mail(:to => user.email, :from => 'send@crowdvoice.org', :subject => @subject)
+    mail(:to => user.email, :from => 'send@bahrainhub.org', :subject => @subject)
   end
 
   # Digest for today's contents added to the voice
@@ -47,28 +47,28 @@ class NotifierMailer < ActionMailer::Base
   def voice_submitted voice_id, admin_email
     @voice = Voice.find(voice_id)
     @title = 'VOICE SUBMITTED'
-    mail(:to => admin_email, :from => 'send@crowdvoice.org', :subject => 'Voice submitted')
+    mail(:to => admin_email, :from => 'send@bahrainhub.org', :subject => 'Voice submitted')
   end
 
   # Notification to poster when their voice has been submitted
   def voice_has_been_submitted voice_id
     @voice = Voice.find(voice_id)
     @title = 'VOICE HAS BEEN SUBMITTED'
-    mail(:to => @voice.user.email, :from => 'send@crowdvoice.org', :subject => 'Voice has been submitted')
+    mail(:to => @voice.user.email, :from => 'send@bahrainhub.org', :subject => 'Voice has been submitted')
   end
 
   # Notification to poster when their voice has been approved
   def voice_approved voice_id
     @voice = Voice.find(voice_id)
     @title = 'VOICE APPROVED'
-    mail(:to => @voice.user.email, :from => 'send@crowdvoice.org', :subject => 'Voice approved')
+    mail(:to => @voice.user.email, :from => 'send@bahrainhub.org', :subject => 'Voice approved')
   end
 
   def sign_up_mail user
     @user = user
     @subject = '[Crowdvoice] Welcome'
     @title = 'WELCOME'
-    mail(:to => user.email, :from => 'send@crowdvoice.org', :subject => @subject)
+    mail(:to => user.email, :from => 'send@bahrainhub.org', :subject => @subject)
   end
 
   private

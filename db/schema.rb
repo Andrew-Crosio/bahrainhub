@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120515150439) do
+ActiveRecord::Schema.define(:version => 20120908002305) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -119,7 +119,13 @@ ActiveRecord::Schema.define(:version => 20120515150439) do
     t.integer  "home_position"
     t.datetime "created_at",                                     :null => false
     t.datetime "updated_at",                                     :null => false
+    t.boolean  "city_or_village",          :default => false
+    t.boolean  "media_coverage",           :default => false
   end
+
+  add_index "voices", ["city_or_village"], :name => "index_voices_on_city_or_village"
+  add_index "voices", ["featured"], :name => "index_voices_on_featured"
+  add_index "voices", ["media_coverage"], :name => "index_voices_on_media_coverage"
 
   create_table "votes", :force => true do |t|
     t.string   "ip_address"

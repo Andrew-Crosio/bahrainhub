@@ -1,8 +1,8 @@
 xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "Content for voice #{@voice.title} on Crowdvoice.org"
-    xml.description "Listing of all contents for voice #{@voice.title} on Crowdvoice.org"
+    xml.title "Content for voice #{@voice.title} on BahrainHub.org"
+    xml.description "Listing of all contents for voice #{@voice.title} on BahrainHub.org"
     xml.link voice_url(@voice, :format => :rss)
     for post in @posts
       xml.item do

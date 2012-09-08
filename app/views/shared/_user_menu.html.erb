@@ -2,61 +2,6 @@
   <ul>
     <li class="addVoice">
       <%= link_to 'About', about_path, :class => 'button voicelogin' %>
-      <% unless current_user %>
-        <div class="tooltip">
-          <div class="tooltip-positioner">
-            <p class="tooltip-arrow"><span></span></p>
-            <p class="media-type-info">
-              <strong class="media-type-title">Login or Signup<br> to Add a Voice.</strong>
-              <span class="pencil"></span>
-            </p>
-          </div>
-        </div>
-      <% end %>
     </li>
-    <% unless current_user %>
-      <li class="sign-btn"><a class="button signup" href="#">Sign Up</a></li>
-      <li><a class="button login" href="#">Login</a></li>
-    <% end %>
   </ul>
 </div>
-<% unless current_user %>
-  <%= form_for User.new, :url => users_path(:format => :json), :html => { :class => 'register-form' } do |f| %>
-    <div class="user-form register-sec">
-      <table class="register-login">
-        <tbody>
-          <tr><td class="form-label"><%= f.label :username %></td><td><%= f.text_field :username, :'data-attribute' => 'username' %></td></tr>
-          <tr><td class="form-label"><%= f.label :email %></td><td><%= f.text_field :email, :'data-attribute' => 'email' %></td></tr>
-          <tr><td class="form-label"><%= f.label :password %></td><td><%= f.password_field :password, :'data-attribute' => 'password' %></td></tr>
-        </tbody>
-      </table>
-      <ul>
-        <li>
-          <div class="signup-btn">
-            <%= submit_tag "Sign Up", :'data-action' => 'submit' %>
-          </div>
-        </li>
-        <li class="cancel"><a class="cancel">Cancel</a></li>
-      </ul>
-    </div>
-  <% end %>
-  <%= form_tag login_path, :format => :json, :class => 'login-form' do %>
-    <div class="user-form login-sec">
-      <table class="register-login">
-        <tbody>
-          <tr><td class="form-label"><%= label_tag :email, 'Login' %></td><td><%= text_field_tag :email %></td></tr>
-          <tr><td class="form-label"><%= label_tag :password %></td><td><%= password_field_tag :password %></td></tr>
-          <tr class="forgot-pass"><td class="form-label"></td><td><a href="<%= reset_password_url %>">Forgot Password?</a></td></tr>
-        </tbody>
-      </table>
-      <ul>
-        <li>
-          <div class="signup-btn">
-            <%= submit_tag "Login", :'data-action' => 'submit' %>
-          </div>
-        </li>
-        <li class="cancel"><a class="cancel" href="">Cancel</a></li>
-      </ul>
-    </div>
-  <% end %>
-<% end %>
