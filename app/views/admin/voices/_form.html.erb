@@ -120,6 +120,22 @@
         </div>
         <div class="clearfix">
           <div class="label-form">
+            <%= f.label :city_or_village %>
+            <small></small>
+          </div>
+          <%= f.check_box :city_or_village %>
+          <%= render 'shared/error_messages_for', :object => @voice, :field => :city_or_village %>
+        </div>
+        <div class="clearfix">
+          <div class="label-form">
+            <%= f.label :media_coverage %>
+            <small></small>
+          </div>
+          <%= f.check_box :media_coverage %>
+          <%= render 'shared/error_messages_for', :object => @voice, :field => :media_coverage %>
+        </div>
+        <div class="clearfix">
+          <div class="label-form">
             <%= f.label :approved %>
             <small></small>
           </div>
