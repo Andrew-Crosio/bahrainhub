@@ -4,6 +4,3 @@
 //= require cv-class/testimonials.js
 //= require cv-class/featureSlider.js
 //= require init/pages.js
-//= require namespace/defaults
-//= require init/application.js
-//= require namespace/voices
