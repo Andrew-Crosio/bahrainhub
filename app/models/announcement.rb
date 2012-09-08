@@ -13,7 +13,7 @@
 
 class Announcement < ActiveRecord::Base
   attr_accessible :title, :content, :url, :voice_id
-  belongs_to :voice
+  belongs_to :voice, :dependent => :delete
 
   validates :title, :presence => true
   validates :content, :presence => true
