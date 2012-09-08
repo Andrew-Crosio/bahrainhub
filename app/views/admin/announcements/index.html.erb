@@ -23,10 +23,16 @@
       <% for announcement in @announcements %>
       <tr>
         <td><%= announcement.title %></td>
-        <td><%= link_to announcement.voice.title, announcement.voice %></td>
+        <td>
+          <% if announcement.voice %>
+            <%= link_to announcement.voice.title, announcement.voice %>
+          <% else %>
+            <b>NO VOICE!</b>
+          <% end %>
+        </td>
         <td><%= announcement.url %></td>
         <td style="width: 25px"><%= link_to "Edit", edit_admin_announcement_path(announcement) %></td>
-        <td style="width: 25px"><%= link_to "Delete", [:admin, announcement], :confirm => "Are you sure?", :method => :delete %></td>
+        <td style="width: 25px"><%= button_to "Delete", admin_announcement_path(announcement), :confirm => "Are you sure?", :method => :delete %></td>
       </tr>
       <% end %>
     </tbody>
