@@ -17,15 +17,16 @@ group :assets do
   gem 'uglifier', '~> 1.2.4'
 end
 
+gem 'yui-compressor'
 gem 'jquery-rails'
-gem 'mysql2'
+gem 'pg'
 gem 'rake'
-gem 'linecache19'
+#gem 'linecache19'
 gem 'rails3-generators'
 gem 'fog'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
-gem 'hoptoad_notifier'
+#gem 'hoptoad_notifier'
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'httparty'
@@ -35,12 +36,12 @@ gem 'nokogiri'
 gem 'tmail'
 gem 'twitter'
 gem 'kaminari'
-gem 'whenever', :require => false
+#gem 'whenever', :require => false
 gem 'memcache-client'
 gem 'acts_as_list'
 
 group :development, :test do
-  gem 'ruby-debug19'
+#  gem 'ruby-debug19'
   gem 'shoulda'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
