@@ -12,8 +12,6 @@ capybara-*.html
 /public/*
 /tmp/*
 /db/*.sqlite*
-/public/system
-/public/uploads
 /coverage/
 /config/config.yml
 /spec/tmp/*
@@ -22,3 +20,5 @@ rerun.txt
 pickle-email-*.html
 /.yardoc
 /nbproject
+Gemfile.lock
+config/database.yml
