@@ -1,9 +1,9 @@
-//= require namespace/defaults.js
-//= require namespace/jscroll.js
-//= require namespace/sidebar.js
-//= require cv-class/testimonials.js
-//= require cv-class/featureSlider.js
-//= require init/pages.js
 //= require namespace/defaults
-//= require init/application.js
+//= require namespace/jscroll
+//= require namespace/sidebar
+//= require cv-class/testimonials
+//= require cv-class/featureSlider
+//= require init/pages
+//= require namespace/defaults
+//= require init/application
 //= require namespace/voices
