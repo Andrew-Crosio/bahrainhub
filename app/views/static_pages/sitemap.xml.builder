@@ -9,7 +9,7 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
   
   xml.url do
     xml.loc about_url
-    xml.lastmod "2010-06-28"
+    xml.lastmod "2012-09-15"
     xml.changefreq "never"
     xml.priority 0.50
   end
