@@ -6,7 +6,7 @@ CarrierWave.configure do |config|
     :aws_access_key_id      => APP_CONFIG[:s3_access_key],
     :aws_secret_access_key  => APP_CONFIG[:s3_access_secret]
   }
-  config.fog_directory  = "crowdvoice-#{Rails.env}"
+  config.fog_directory  = "bahrainhub-#{Rails.env}"
   config.fog_attributes = {'x-amz-storage-class' => 'REDUCED_REDUNDANCY'}
 
   config.storage = Rails.env.production? ? :fog : :file
