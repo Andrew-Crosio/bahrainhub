@@ -5,12 +5,12 @@ window.initializeMap = ->
     window.map = new Map('.map-container', {center: Map.at(26.0275, 50.5500), zoom: 11})
     Map.getLocations( (locations) ->
       for i in [0..locations.length]
-        loc = locations[i].location
+      for location in locations
         position = null
-        label = locations[i].voices.length
-        title = label + ' voice(s) in ' + loc
+        label = location.voices.length
+        title = label + ' voice(s) in ' + location.location
         content = '<ul class="map-voices">'
-        for voice in locations[i].voices
+        for voice in location.voices
           if not position
             position = Map.at(voice.latitude, voice.longitude)
 
