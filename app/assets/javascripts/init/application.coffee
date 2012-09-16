@@ -2,7 +2,7 @@ initializeMap = ->
     script = $('<script type="text/javascript" />')
     script.attr('src', "/javascripts/cv-class/map.js")
     $('head').append(script)
-    map = new Map('.map-container', {center: Map.at(26.0275, 50.5500)})
+    window.map = new Map('.map-container', {center: Map.at(26.0275, 50.5500)})
     Map.getLocations( (locations) ->
       for i in [0..locations.length]
         loc = locations[i].location
@@ -18,7 +18,7 @@ initializeMap = ->
 
         content += '</ul>'
 
-        map.addPin(position, title, label, content)
+        window.map.addPin(position, title, label, content)
     )
 
 $( ->
@@ -42,7 +42,7 @@ $( ->
 
       $('.map-btn').toggleClass('map-active')
 
-      if not map
+      if not window.map
         script = $('<script type="text/javascript" />')
         script.attr('src', "http://maps.google.com/maps/api/js?sensor=false&callback=initializeMap")
         $('head').append(script)
