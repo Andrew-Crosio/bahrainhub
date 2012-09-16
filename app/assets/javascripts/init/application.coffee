@@ -1,4 +1,4 @@
-initializeMap = ->
+window.initializeMap = ->
     script = $('<script type="text/javascript" />')
     script.attr('src', "/javascripts/cv-class/map.js")
     $('head').append(script)
