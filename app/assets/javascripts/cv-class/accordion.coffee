@@ -7,7 +7,7 @@ Class('Accordion')({
 
     _bindEvents: ->
       @element.parent().click =>
-        @toggle @element.children 'span'
+        @toggle @element.children
 
     toggle: (panel) ->
       panel.parent().next('ul').stop(false,true).slideToggle 'fast'
