@@ -49,7 +49,7 @@ $(window).load ->
   Timeline.build($('.timeliner-group'), window.timeline_dates)
 
 load_votes = ->
-  $.each posts_votes, (i, val) ->
+  $.each window.posts_votes, (i, val) ->
    ele = $(".voice-box[data-post-id='"+val.id+"']")
 
    ele.find('a.source-url').attr('data-voted', true)

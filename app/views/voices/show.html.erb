@@ -226,7 +226,7 @@
   <% end %>
 
   <script>
-    var posts_votes = <%= @votes.to_json.html_safe %>;
+    window.posts_votes = <%= @votes.to_json.html_safe %>;
   </script>
 
   <% cache(cache_key_for_posts @voice) do %>
