@@ -4,7 +4,6 @@ window.initializeMap = ->
     $('head').append(script)
     window.map = new Map('.map-container', {center: Map.at(26.0275, 50.5500), zoom: 11})
     Map.getLocations( (locations) ->
-      for i in [0..locations.length]
       for location in locations
         position = null
         label = location.voices.length
