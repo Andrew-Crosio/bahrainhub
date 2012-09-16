@@ -10,8 +10,7 @@ window.initializeMap = ->
         label = locations[i].voices.length
         title = label + ' voice(s) in ' + loc
         content = '<ul class="map-voices">'
-        for j in [0..locations[i].voices.length]
-          voice = locations[i].voices[j]
+        for voice in locations[i].voices
           if not position
             position = Map.at(voice.latitude, voice.longitude)
 
