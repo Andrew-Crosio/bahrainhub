@@ -1,8 +1,8 @@
-//= require cv-class/dynamicMeasures.js
-//= require cv-class/tooltip.js
-//= require cv-class/sidebarToggler.js
+//= require cv-class/dynamicMeasures
+//= require cv-class/tooltip
+//= require cv-class/sidebarToggler
 //= require cv-class/accordion.js
-//= require cv-class/slideSection.js
-//= require cv-class/liveFilter.js
-//= require cv-class/jsonForm.js
+//= require cv-class/slideSection
+//= require cv-class/liveFilter
+//= require cv-class/jsonForm
 
