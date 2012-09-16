@@ -113,18 +113,19 @@ Class('Timeline')({
     @min_year = 3000
     @max_year = 0
 
-    for year in @dates
-      if @dates.hasOwnProperty(year)
-        year = parseInt(year)
-        if year > @max_year
-          @max_year = year
-        
-        if year < @min_year
-          @min_year = year
-        
-    for year in @dates
-      if @dates.hasOwnProperty(year) and parseInt(year) isnt @max_year
-        items = template.replace(/{{year}}/g, year) + items
+    if @dates?
+        for year in @dates
+          if @dates.hasOwnProperty(year)
+            year = parseInt(year)
+            if year > @max_year
+              @max_year = year
+
+            if year < @min_year
+              @min_year = year
+
+        for year in @dates
+          if @dates.hasOwnProperty(year) and parseInt(year) isnt @max_year
+            items = template.replace(/{{year}}/g, year) + items
       
     if items.length
       @element.append(items)

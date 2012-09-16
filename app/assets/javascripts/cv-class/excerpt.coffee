@@ -20,7 +20,11 @@ Class('Excerpt')({
       characters = @options.showChar
       quote = @quote
       quoteCont = @quote.html()
-      quoteSize = quoteCont.length
+      if quoteCont?
+        quoteSize = quoteCont.length
+      else
+        quoteSize = 0
+
       ellipsestext = @options.ellipsestext
 
       if quoteSize > @options.showChar
