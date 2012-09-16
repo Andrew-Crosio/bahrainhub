@@ -2,7 +2,7 @@ window.initializeMap = ->
     script = $('<script type="text/javascript" />')
     script.attr('src', "/javascripts/cv-class/map.js")
     $('head').append(script)
-    window.map = new Map('.map-container', {center: Map.at(26.0275, 50.5500), zoom: 11})
+    window.map = new Map('.map-container', {center: Map.at(26.0275, 50.5500), zoom: 10})
     Map.getLocations( (locations) ->
       for location in locations
         position = null
