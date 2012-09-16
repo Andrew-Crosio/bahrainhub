@@ -281,7 +281,10 @@ Class('Timeline')({
         , 50)
 
   _setHeight: ->
-    @element.css("top", $('.voices-container').offset().top)
+    voicesContainer = $('.voices-container')
+    if voicesContainer?
+      @element.css("top", voicesContainer.offset().top)
+
     @sliderTop = @sliderTop || @slider.offset().top
     deactivated = $('.timeliner.disactivated-timeliner', @element)
     h = $(window).height() - @sliderTop - ((deactivated.height()) * deactivated.length) - 30
