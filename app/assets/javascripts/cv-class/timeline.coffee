@@ -201,10 +201,11 @@ Class('Timeline')({
     @slider_tip.text(@parseDate(@currentYearDates()[ui.value]))
 
   parseDate: (date) ->
-    dateparts = (/\d{4}-(\d{2})-(\d{2})/).exec(date)
-    month = parseInt(dateparts[1], 10)
-    day = dateparts[2]
-    @months[month] + ' ' + day
+    if date?
+      dateparts = (/\d{4}-(\d{2})-(\d{2})/).exec(date)
+      month = parseInt(dateparts[1], 10)
+      day = dateparts[2]
+      @months[month] + ' ' + day
 
   scrollToDate: (date, callback) ->
     @sliding = true
@@ -281,8 +282,8 @@ Class('Timeline')({
         , 50)
 
   _setHeight: ->
-    voicesContainer = $('.voices-container')
-    if voicesContainer?
+    voicesContainerOffset = $('.voices-container').offset()
+    if voicesContainerOffset?
       @element.css("top", voicesContainer.offset().top)
 
     @sliderTop = @sliderTop || @slider.offset().top
