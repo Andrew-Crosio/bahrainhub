@@ -1,6 +1,6 @@
 <% if ((@next_page.pred.pred * Setting.posts_per_page) + @posts.size) < @posts_count %>
   <%= link_to(voice_path(@voice, :page => @next_page), :class => 'more-content', :filters => params[:filters]) do %>
-    <%= image_tag '/images/loader-more.gif', :id => 'more_loader_spinner', :border => "0", :style => "display: none; " %>
+    <%= image_tag 'loader-more.gif', :id => 'more_loader_spinner', :border => "0", :style => "display: none; " %>
     <%= 'More Posts' %>
   <% end %>
 <% end %>

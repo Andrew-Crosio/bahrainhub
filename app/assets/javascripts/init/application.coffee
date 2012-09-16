@@ -1,6 +1,6 @@
 initializeMap = ->
     script = $('<script type="text/javascript" />')
-    script.attr('src', "/javascripts/cv/map.js")
+    script.attr('src', "/javascripts/cv-class/map.js")
     $('head').append(script)
     map = new Map('.map-container', {center: Map.at(26.0275, 50.5500)})
     Map.getLocations( (locations) ->
