@@ -2,7 +2,7 @@ window.initializeMap = ->
     script = $('<script type="text/javascript" />')
     script.attr('src', "/javascripts/cv-class/map.js")
     $('head').append(script)
-    window.map = new Map('.map-container', {center: Map.at(26.0275, 50.5500)})
+    window.map = new Map('.map-container', {center: Map.at(26.0275, 50.5500), zoom: 11})
     Map.getLocations( (locations) ->
       for i in [0..locations.length]
         loc = locations[i].location
@@ -14,6 +14,7 @@ window.initializeMap = ->
           voice = locations[i].voices[j]
           if not position
             position = Map.at(voice.latitude, voice.longitude)
+
           content += '<li><a href="/' + voice.slug + '">' + voice.title + '</a></li>'
 
         content += '</ul>'

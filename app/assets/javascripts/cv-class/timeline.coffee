@@ -60,7 +60,12 @@ Class('Timeline')({
   updateSliderPosition: ->
     visible = $.grep( $('.voices-container > .voice-box'), (n) =>
         n = $(n)
-        y1 = $('.voices-container').offset().top
+        offset = $('.voices-container').offset()
+        if offset?
+            y1 = offset.top
+        else
+            y1 = 0
+
         y = $('body').height() - y1
         fromTop = n.offset().top - y1 - $(@scrollable).scrollTop()
         fromTop < y and fromTop > y1
