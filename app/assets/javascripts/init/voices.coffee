@@ -112,7 +112,7 @@ load_tweets = ->
 
   if query isnt ''
     $.ajax({
-      url: 'http://search.twitter.com/search.json?q='+query,
+      url: 'https://search.twitter.com/search.json?q='+query,
       dataType: "jsonp",
       success: (data) ->
         results = data.results

@@ -56,7 +56,7 @@
                 <label class="blog-widget-label" for="blog-widget-scope-all"><input id="blog-widget-scope-all" class="widget-scope" type="radio" value="all" name="scope" />All voices</label>
                 <p><label class="blog-widget-label" for="blog-widget-show-description"><input id="blog-widget-show-description" class="description-checkbox" type="checkbox" value="1" name="description" />Include description</label></p>
                 <p><label class="blog-widget-label" for="blog-widget-show-rtl"><input id="blog-widget-show-rtl" class="rtl-checkbox" type="checkbox" value="1" name="rtl" />Right to Left</label></p>
-                <textarea  class="blog-widget-textarea" data-template="<iframe src='http://bahrainhub.org/widget/<%= @voice.slug %>?size={{size}}&scope={{scope}}&show_description={{show_description}}&rtl={{rtl}}' scrolling='no' frameborder='0' style='overflow:hidden; border:none; width:100%; height:{{height}}px;' allowTransparency='true'></iframe>"><iframe src='http://bahrainhub.org/widget/<%= @voice.slug %>?size=small&scope=this&show_description=0&rtl=0' scrolling='no' frameborder='0' style='overflow:hidden; border:none; width:100%;height:400px;' allowTransparency='true'></iframe>
+                <textarea  class="blog-widget-textarea" data-template="<iframe src='https://bahrainhub.org/widget/<%= @voice.slug %>?size={{size}}&scope={{scope}}&show_description={{show_description}}&rtl={{rtl}}' scrolling='no' frameborder='0' style='overflow:hidden; border:none; width:100%; height:{{height}}px;' allowTransparency='true'></iframe>"><iframe src='https://bahrainhub.org/widget/<%= @voice.slug %>?size=small&scope=this&show_description=0&rtl=0' scrolling='no' frameborder='0' style='overflow:hidden; border:none; width:100%;height:400px;' allowTransparency='true'></iframe>
                 </textarea>
               </fieldset>
             </form>
@@ -65,7 +65,7 @@
       </li>
       <li class="info-tool rss"><%= link_to '', voice_path(@voice, :format => :rss), :class => 'info-tool-link', :title => 'RSS feed' %></li>
       <li class="info-tool twitter"><%= link_to '', "http://twitter.com/intent/tweet?text=#{CGI.escape @voice.title}&url=#{CGI.escape voice_url(@voice)}&via=bahrainhub", :target => '_blank', :title => 'Share on Twitter', :class => 'info-tool-link' %></li>
-      <li class="info-tool facebook-like-button"><iframe src="http://www.facebook.com/plugins/like.php?app_id=101972966529938&amp;href=<%= CGI.escape voice_url(@voice) %>&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe></li>
+      <li class="info-tool facebook-like-button"><iframe src="https://www.facebook.com/plugins/like.php?app_id=101972966529938&amp;href=<%= CGI.escape voice_url(@voice) %>&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe></li>
     </ul>
     <h4 class="voice-subtitle"><em><%= @voice.description %></em> <a class="more-button"><span>More</span></a></h4>
   </div>

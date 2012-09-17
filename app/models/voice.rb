@@ -73,7 +73,7 @@ class Voice < ActiveRecord::Base
 # # Takes preference for map_url attribute over building the link
 # # with location.
   def map_link
-    map_url.blank? ? "http://maps.google.com/?q=#{CGI::escape location}" : map_url
+    map_url.blank? ? "https://maps.google.com/?q=#{CGI::escape location}" : map_url
   end
 
 # Replace special caracters to their equivalents

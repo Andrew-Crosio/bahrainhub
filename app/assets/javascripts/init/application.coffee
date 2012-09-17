@@ -43,7 +43,7 @@ $( ->
 
       if not window.map
         script = $('<script type="text/javascript" />')
-        script.attr('src', "http://maps.google.com/maps/api/js?sensor=false&callback=initializeMap")
+        script.attr('src', "https://maps.google.com/maps/api/js?sensor=false&callback=initializeMap")
         $('head').append(script)
 
       if not $('.map-btn').hasClass('map-active')
