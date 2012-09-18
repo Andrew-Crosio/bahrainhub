@@ -352,7 +352,7 @@ hgroup{
 }
 
 .media-type-link {
-  color: nth($greenShades, 4);
+  color: #3E5367;
 }
 
 @each $color in $tColors {
@@ -498,7 +498,7 @@ hgroup{
 }
 
 .moderate-tooltip {
-  color: darken($txtLight, 57.5);
+  color: #DCDCDC;
 }
 
 @each $color in $tColors {
