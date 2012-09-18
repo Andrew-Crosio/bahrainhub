@@ -78,14 +78,6 @@ class Post < ActiveRecord::Base
    end
   end
 
- def remote_image_url=(value)
-   begin
-     self.image = OpenURI.open_uri(value)
-   rescue OpenURI::HTTPError
-     self.image = Scrapers::Sources::Html::DEFAULT_IMAGE
-   end
- end
-
 # def voted_by?(user, ip, positive_rating)
 #  #if positive_rating
 #  #  vote = Vote.where("post_id = :id and rating > 0 and (user_id = :user or ip_address = :ip)",{:id => self.id, :user => user, :ip => ip}).pop
