@@ -19,7 +19,7 @@ function initializeMap() {
     $('head').append(script);
     map = new Map('.map-container', {
       center: Map.at(26.0275, 50.5500),
-      zoom: 10
+      zoom: 12
     });
     Map.getLocations(function (locations) {
         for (var i = 0; i < locations.length; i++) {

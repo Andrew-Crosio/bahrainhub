@@ -358,13 +358,13 @@ hgroup{
 @each $color in $tColors {
 
   body.#{nth($color, 1)} .media-type-link {
-    color: nth($color, 4);
+    color: color: #3E5367;
   }
 
 }
 
 .media-type-notice {
-  color: darken($txtLight, 28.5);
+  color: #CACACA;
 }
 
 .blog-widget-textarea {
