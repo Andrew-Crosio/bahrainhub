@@ -11,7 +11,7 @@ Class('Accordion')({
                 that.toggle($(this).children('span'));
             });
         },
-
+        
         toggle: function (panel) {
             panel.parent().next("ul").stop(false, true).slideToggle('fast');
             panel.toggleClass('down-arrow')

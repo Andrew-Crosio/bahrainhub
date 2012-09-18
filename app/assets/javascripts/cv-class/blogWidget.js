@@ -1,73 +1,5 @@
 Class('BlogWidget')({
     prototype: {
-      
-      init: ->
-        @element =          $('.grab-blog-widget')
-        @sizes =            @element.find('.widget-height')
-        @scopes =           @element.find('.widget-scope')
-        @show_description = @element.find('.description-checkbox')
-        @show_rtl =         @element.find('.rtl-checkbox')
-        @field =            @element.find('.blog-widget-textarea')
-        @_template =        @field.data('template')
-        @_bindEvents()
-    
-      _bindEvents: ->
-        @sizes.add(@show_description).add(@show_rtl).add(@scopes).bind('click'
-          =>
-            @_updateCode()
-        )
-        @field.bind('click'
-          ->
-            $(this).select()
-        )
-
-      _updateCode: ->
-        params = {
-            size: @size()
-            show_description: @showDescription()
-            scope: @scope()
-            rtl: @rtl()
-            height: @height()
-        }
-        code = @_template.replace(/{{size}}/g, params.size)
-            .replace(/{{show_description}}/g, params.show_description)
-            .replace(/{{scope}}/g, params.scope)
-            .replace(/{{height}}/g, params.height)
-            .replace(/{{rtl}}/g, params.rtl)
-
-        @field.val(code)
-
-      height: ->
-        h = 400
-        switch @size()
-          when 'small'
-              h = if @scope() is 'this' then 400 else 385
-
-          when 'medium'
-              h = if @scope() is 'this' then 495 else 465
-
-          when 'tall'
-              h = if @scope() is 'this' then 595 else 565
-        h
-
-      size: ->
-        @sizes.filter(':checked').val()
-
-      scope: ->
-        @scopes.filter(':checked').val()
-
-      showDescription: ->
-        if @show_description.is(':checked') then '1' else '0'
-
-      rtl: ->
-        if @show_rtl.is(':checked') then '1' else '0'
-
-    }
-});
-
-###
-Class('BlogWidget')({
-    prototype: {
         init: function() {
             this.element = $('.grab-blog-widget');
             this.sizes = this.element.find('.widget-height');
@@ -138,5 +70,3 @@ Class('BlogWidget')({
         }
     }
 });
-
-###
