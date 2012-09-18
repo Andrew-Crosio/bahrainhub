@@ -274,7 +274,7 @@ hgroup{
 
 .tooltip > .tooltip-positioner > .media-type-info,
 .tooltip-positioner > form > .grab-blog-widget {
-  border-color: $lightShade-8;
+  border-color: #DDDDDD;
   border-style: solid;
   background-color: $lightShade-6;
   @include border-radius(5px);
@@ -662,7 +662,7 @@ hgroup{
 .voice-search {
   background: url($side-search) repeat-x;
   border-style: solid;
-  border-color: $lightShade-5 transparent $mainShade transparent;
+  border-color: $lightShade-5 transparent $lightShade-5 transparent;
 }
 
 .voice-search .search {
@@ -691,7 +691,7 @@ hgroup{
 
 .voice-search .search-divider {
   border-style: solid;
-  border-color: $mainShade;
+  border-color: $lightShade-3;
   background: $lightShade-3;
 }
 
@@ -821,7 +821,7 @@ hgroup{
   cursor: pointer;
   background: url($voice-sec) repeat-x;
   border-style: solid;
-  border-color: $lightShade-6 transparent $lightShade-2;
+  border-color: $lightShade-6;
   color: darken($txtLight, 38.5);
   @include opacity(1);
 
