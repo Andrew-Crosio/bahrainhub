@@ -4,7 +4,11 @@
 
   <div class="voice-cont">
     <%= link_to post_url, :class => "source-url post-#{post.id}", :'data-type' => post.source_type, :'data-title' => post.title, :'data-permalink' => voice_url(@voice, :post => post.id), :'data-ago' => time_ago_in_words(post.created_at), :'data-id' => post.id, :'data-voted' => false, :'data-service' => post.source_url.nil? ? Post.detect_service(post.source_url) : post.source_url do %>
-      <%= image_tag post.image.thumb.url, :size => "#{post.image_width}x#{post.image_height}", :class => 'thumb-preview' %>
+      <% if post.image %>
+        <%= image_tag post.image.thumb.url, :size => "#{post.image_width}x#{post.image_height}", :class => 'thumb-preview' %>
+      <% else %>
+        No image available.
+      <% end %>
     <% end %>
     <h3><%= post.title if post.title != '(no title)'%></h3>
     <span><%= post.created_at.to_s(:short) %></span>

@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     if @post.save
       status = :ok
     else
+      print @post.errors
       status = :unprocessable_entity
     end
 

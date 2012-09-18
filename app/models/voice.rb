@@ -5,8 +5,10 @@ class Voice < ActiveRecord::Base
 
   attr_accessible :title, :description, :theme, :logo_link, :logo_cache,
     :latitude, :longitude, :location, :map_url, :twitter_search, :background,
-    :featured, :city_or_village, :media_coverage, :archived, :logo, :sponsor_slogan, :sponsor, :rss_feed, :last_rss, :last_tweet, :approved,
-    :background_version, :square_background, :wide_background, :background_cache, :wide_background_cache, :square_background_cache
+    :featured, :city_or_village, :media_coverage, :archived, :logo,
+    :sponsor_slogan, :sponsor, :rss_feed, :last_rss, :last_tweet, :approved,
+    :background_version, :square_background, :wide_background, :background_cache,
+    :wide_background_cache, :square_background_cache
 
   mount_uploader :logo, LogoUploader
   mount_uploader :background, BackgroundUploader

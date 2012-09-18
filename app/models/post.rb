@@ -23,7 +23,10 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :voice_id, :user_id, :title, :description, :remote_image_url, :positive_count, :negative_votes_count, :overall_score, :source_url, :source_type, :source_service, :image, :approved, :copyright, :image_width, :image_height
+  attr_accessible :voice_id, :user_id, :title, :description, :remote_image_url,
+    :positive_count, :negative_votes_count, :overall_score, :source_url,
+    :source_type, :source_service, :image, :approved, :copyright,
+    :image_width, :image_height
   belongs_to :voice
   belongs_to :user
   has_many :votes, :dependent => :destroy
