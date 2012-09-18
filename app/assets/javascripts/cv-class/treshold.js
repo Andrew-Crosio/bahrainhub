@@ -15,7 +15,7 @@ Class('Treshold')({
                 min: -10, 
                 max: 10, 
                 step: 1, 
-                values: [this.minInput.val();, this.maxInput.val();], 
+                values: [this.minInput.val(), this.maxInput.val()], 
                 range: true, 
                 animate: true, 
                 slide: function(e,ui) { 

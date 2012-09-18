@@ -10,8 +10,8 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require namespace/defaults
+//= require namespace/defaults.js
 //= require init/application.js
-//= require namespace/jscroll
-//= require namespace/sidebar
-//= require namespace/voices
+//= require namespace/jscroll.js
+//= require namespace/sidebar.js
+//= require namespace/voices.js
