@@ -74,7 +74,7 @@
       <%= form_for Post.new, :url => voice_posts_path(@voice, :format => :json), :html => { :multipart => true } do |f| %>
         <%= f.text_field :url_check, :style => "display:none" %>
         <fieldset class="post">
-          <p class="post-paceholder"><span>Post a URL or </span><%= f.file_field :image %><a href="#" title="Upload an Image">Upload an Image</a><span class="cover"></span></p>
+          <p class="post-paceholder"><span>Post a URL or </span><%= f.file_field :image %><a href="#" title="Upload an Image">Upload an Image</a></p>
           <ul class="post-type">
             <li class="media tool-image">
               <a class="media-type image-tool" href="#" title="Image"></a>
