@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  caches_page :about, :sitemap
+  caches_page :sitemap
 
   layout 'page', :only => [:about]
 
