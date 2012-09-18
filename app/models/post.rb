@@ -31,9 +31,9 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :votes, :dependent => :destroy
 
-  attr_accessor :image_description, :image_title, :url_check
+  attr_accessor :image_description, :image_title, :url_check, :remote_image_url
 
-#  mount_uploader :image, PostImageUploader
+  mount_uploader :image, PostImageUploader
 
   validates :source_url, :presence => true,
     :uniqueness => { :case_sensitive => false },
@@ -78,14 +78,13 @@ class Post < ActiveRecord::Base
    end
   end
 
-# def remote_image_url=(value)
-#   debugger
-#   begin
-#     super
-#   rescue OpenURI::HTTPError
-#     super(Scrapers::Sources::Html::DEFAULT_IMAGE)
-#   end
-# end
+ def remote_image_url=(value)
+   begin
+     self.image = OpenURI.open_uri(value)
+   rescue OpenURI::HTTPError
+     self.image = Scrapers::Sources::Html::DEFAULT_IMAGE
+   end
+ end
 
 # def voted_by?(user, ip, positive_rating)
 #  #if positive_rating
