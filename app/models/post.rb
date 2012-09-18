@@ -31,7 +31,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :votes, :dependent => :destroy
 
-  attr_accessor :image_description, :image_title, :url_check, :remote_image_url
+  attr_accessor :image_description, :image_title, :url_check
 
 #  mount_uploader :image, PostImageUploader
 
