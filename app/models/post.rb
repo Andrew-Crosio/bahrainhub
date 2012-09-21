@@ -105,12 +105,7 @@ class Post < ActiveRecord::Base
   end
 
   def set_source_type
-    if self.image and self.image =~ /^\/uploads\/tmp\//
-      self.remote_image_url = "https://www.bahrainhub.org:3000/#{self.image}"
-      self.source_type = 'image'
-    else
-      self.source_type = self.class.detect_type(self.source_url)
-    end
+    self.source_type = self.class.detect_type(self.source_url)
     if self.source_type == 'image'
       self.description = self.image_description if !self.image_description.blank?
       self.title = self.image_title
@@ -154,7 +149,7 @@ class Post < ActiveRecord::Base
   end
 
   def uploaded_image?
-   self.image.blank?
+   !self.image.blank?
   end
   
 end
