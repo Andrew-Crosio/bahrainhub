@@ -143,6 +143,7 @@ Class('Post')({
                                     $.get('/' + window.currentVoice.slug + '/posts/' + data.post.id, function(html) {
                                         var post    = $(html);
                                         $('.post-type .tooltip').hide();
+                                        $('.post-button .tooltip').hide();
                                         $('.media > a').removeClass('active')
                                         posts_filter.toggleModerator(true);
                                         carousel.clear();

@@ -10,13 +10,10 @@ class PostsController < ApplicationController
     @post = @voice.posts.new(params[:post])
 
     if @post.save
-      status = :ok
+      respond_with({:post => @post}, :location => @voice, :status => :success, :content_type => 'text/plain')
     else
-      print @post.errors
-      status = :unprocessable_entity
+      respond_with({:post => nil}, :location => @voice, :status => :success, :content_type => 'text/plain')
     end
-
-    respond_with(@post, :location => @voice, :status => status, :content_type => "text/plain")
   end
 
   #Shows a single instance of Post
