@@ -88,38 +88,38 @@ class Post < ActiveRecord::Base
 # end
 
   def is_raw_image?
-    source_type=='image' && !(source_url =~ Scrapers::Sources::Flickr.regexp) && !(source_url =~ Scrapers::Sources::Twitpic.regexp) && !(source_url =~ Scrapers::Sources::Yfrog.regexp)
+    self.source_type == 'image' && !(self.source_url =~ Scrapers::Sources::Flickr.regexp) && !(self.source_url =~ Scrapers::Sources::Twitpic.regexp) && !(self.source_url =~ Scrapers::Sources::Yfrog.regexp)
   end
 
   private
 
   def url_check_blank
-   errors.add(:url_check, "Must be blank") if url_check.present?
+   errors.add(:url_check, "Must be blank") if self.url_check.present?
   end
 
   def validate_source_type
-    (source_url_changed? && !source_url.blank? && !self.class.exists?(:voice_id => voice_id, :source_url => source_url)) || image_changed?
+    (self.source_url_changed? && !self.source_url.blank? && !self.class.exists?(:voice_id => self.voice_id, :source_url => self.source_url)) || self.image_changed?
   end
 
   def validate_scrape_source
-    (source_url_changed? && !source_url.blank? && !self.class.exists?(:voice_id => voice_id, :source_url => source_url) && source_type.present?) || image.present?
+    (self.source_url_changed? && !self.source_url.blank? && !self.class.exists?(:voice_id => self.voice_id, :source_url => self.source_url) && self.source_type.present?) || self.image.present?
   end
 
   def set_source_type
-   if image.blank? || !remote_image_url.blank?
-     self.source_type = self.class.detect_type(source_url)
+   if self.image.blank? || !self.remote_image_url.blank?
+     self.source_type = self.class.detect_type(self.source_url)
    else
      self.source_type = 'image'
    end
-   self.description = image_description if source_type == 'image'
-   self.title = image_title if source_type == 'image'
+   self.description = self.image_description if self.source_type == 'image' and not self.image_description.blank?
+   self.title = self.image_title if self.source_type == 'image'
   end
 
   def scrape_source
-    if !(source_type == 'image' && !image.blank?)
+    if !(self.source_type == 'image' && !self.image.blank?)
       begin
-        raise Scrapers::Sources::Exceptions::UnrecognizedSource unless source_type.present?
-        scraper = "scrapers/#{source_type}".classify.constantize.new(source_url).scraper
+        raise Scrapers::Sources::Exceptions::UnrecognizedSource unless self.source_type.present?
+        scraper = "scrapers/#{self.source_type}".classify.constantize.new(self.source_url).scraper
       rescue Scrapers::Sources::Exceptions::UnrecognizedSource
         errors.add(:source_url, "is invalid or is already taken")
         return false
@@ -127,8 +127,8 @@ class Post < ActiveRecord::Base
 
       begin
         scraper.scrape do |data|
-          self.title = data.title if title.blank?
-          self.description = data.description if description.blank?
+          self.title = data.title if self.title.blank?
+          self.description = data.description if self.description.blank?
           self.remote_image_url = data.image_url if self.remote_image_url.blank?
         end
       rescue Timeout::Error, StandardError
@@ -139,13 +139,13 @@ class Post < ActiveRecord::Base
   end
 
   def set_defaults_strings
-    self.title = '(no title)' unless title.present?
-    self.description = '(no description)' unless description.present?
+    self.title = '(no title)' unless self.title.present?
+    self.description = '(no description)' unless self.description.present?
   end
 
   def remove_unsafe_characters
-   self.title = title.remove_unsafe if title
-   self.description = description.remove_unsafe if description
+   self.title = self.title.remove_unsafe if self.title
+   self.description = self.description.remove_unsafe if self.description
   end
 
   def update_source_service
@@ -153,7 +153,7 @@ class Post < ActiveRecord::Base
   end
 
   def uploaded_image?
-   image.blank?
+   self.image.blank?
   end
   
 end
