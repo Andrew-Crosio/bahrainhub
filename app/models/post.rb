@@ -63,6 +63,8 @@ class Post < ActiveRecord::Base
      'image'
    elsif Scrapers::Link.valid_url?(url)
      'link'
+   else
+     'image'
    end
   end
 
