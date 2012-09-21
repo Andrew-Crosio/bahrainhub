@@ -26,7 +26,7 @@ class Post < ActiveRecord::Base
   attr_accessible :voice_id, :user_id, :title, :description, :remote_image_url,
     :positive_count, :negative_votes_count, :overall_score, :source_url,
     :source_type, :source_service, :image, :approved, :copyright,
-    :image_width, :image_height
+    :image_width, :image_height, :image_title, :image_description
   belongs_to :voice
   belongs_to :user
   has_many :votes, :dependent => :destroy
@@ -74,6 +74,7 @@ class Post < ActiveRecord::Base
      when Scrapers::Sources::Flickr.regexp then 'Flickr'
      when Scrapers::Sources::Twitpic.regexp then 'Twitpic'
      when Scrapers::Sources::Yfrog.regexp then 'Yfrog'
+     when Scrapers::Sources::RawImage.regexp then 'image'
      else 'Link'
    end
   end
@@ -106,12 +107,8 @@ class Post < ActiveRecord::Base
   end
 
   def set_source_type
-   if self.image.blank? || !self.remote_image_url.blank?
-     self.source_type = self.class.detect_type(self.source_url)
-   else
-     self.source_type = 'image'
-   end
-   self.description = self.image_description if self.source_type == 'image' and not self.image_description.blank?
+   self.source_type = self.class.detect_type(self.source_url)
+   self.description = self.image_description if self.source_type == 'image' and !self.image_description.blank?
    self.title = self.image_title if self.source_type == 'image'
   end
 
