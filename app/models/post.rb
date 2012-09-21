@@ -105,7 +105,12 @@ class Post < ActiveRecord::Base
   end
 
   def set_source_type
-    self.source_type = self.class.detect_type(self.source_url)
+    if self.image and self.image =~ /^\/uploads\/tmp\//
+      self.remote_image_url = "https://www.bahrainhub.org:3000/#{self.image}"
+      self.source_type = 'image'
+    else
+      self.source_type = self.class.detect_type(self.source_url)
+    end
     if self.source_type == 'image'
       self.description = self.image_description if !self.image_description.blank?
       self.title = self.image_title
@@ -113,12 +118,11 @@ class Post < ActiveRecord::Base
   end
 
   def scrape_source
-    if !(self.source_type == 'image' && !self.image.blank?)
+    if self.source_type != 'image' || self.image.blank?
       begin
         raise Scrapers::Sources::Exceptions::UnrecognizedSource unless self.source_type.present?
         scraper = "scrapers/#{self.source_type}".classify.constantize.new(self.source_url).scraper
       rescue Scrapers::Sources::Exceptions::UnrecognizedSource
-        errors.add(:source_url, "is invalid or is already taken")
         return false
       end
 
