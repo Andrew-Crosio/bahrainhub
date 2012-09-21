@@ -170,14 +170,15 @@ Class('Post')({
 //                                    });
                                     // TODO: show tooltip confirmation
                                 } else { //error -- doesn't work with $.ajax error callback
-                                    for(var error in data){
-                                        $('.post-type .tooltip').hide();
-                                        $('.media > a').removeClass('active')
-                                        if (data.hasOwnProperty(error) && error == 'source_url'){
-                                            $('.tooltip.notice .moderate-tooltip').html('Error while adding post.')
-                                            $('.tooltip.notice').show();
-                                        }
+                                    $('.post-type .tooltip').hide();
+                                    $('.media > a').removeClass('active')
+                                    var error_tooltip = '<strong>Error while adding post.</strong><br/><ul>'
+                                    for (var error in data.errors) {
+                                        error_tooltip += '<li>' + error + '</li>'
                                     }
+                                    error_tooltip += '</li>'
+                                    $('.tooltip.notice .moderate-tooltip').html(error_tooltip)
+                                    $('.tooltip.notice').show();
                                 }
                             }
                         });
