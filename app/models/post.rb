@@ -74,7 +74,6 @@ class Post < ActiveRecord::Base
      when Scrapers::Sources::Flickr.regexp then 'Flickr'
      when Scrapers::Sources::Twitpic.regexp then 'Twitpic'
      when Scrapers::Sources::Yfrog.regexp then 'Yfrog'
-     when Scrapers::Sources::RawImage.regexp then 'image'
      else 'Link'
    end
   end
@@ -107,9 +106,11 @@ class Post < ActiveRecord::Base
   end
 
   def set_source_type
-   self.source_type = self.class.detect_type(self.source_url)
-   self.description = self.image_description if self.source_type == 'image' and !self.image_description.blank?
-   self.title = self.image_title if self.source_type == 'image'
+    self.source_type = self.class.detect_type(self.source_url)
+    if self.source_type == 'image'
+      self.description = self.image_description if !self.image_description.blank?
+      self.title = self.image_title
+    end
   end
 
   def scrape_source
