@@ -503,7 +503,7 @@ hgroup{
 
 @each $color in $tColors {
   body.#{nth($color, 1)} .mode-button > .button > a {
-    color: nth($color, 5);
+    color: #CCCCCC;
   }
 }
 
