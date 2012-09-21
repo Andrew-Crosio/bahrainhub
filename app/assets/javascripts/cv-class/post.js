@@ -173,8 +173,8 @@ Class('Post')({
                                     $('.post-type .tooltip').hide();
                                     $('.media > a').removeClass('active')
                                     var error_tooltip = '<strong>Error while adding post.</strong><br/><ul>'
-                                    for (var error in data.errors) {
-                                        error_tooltip += '<li>' + error + '</li>'
+                                    for (var i=0;data.errors[i] != null;i++) {
+                                        error_tooltip += '<li>' + data.errors[i] + '</li>'
                                     }
                                     error_tooltip += '</li>'
                                     $('.tooltip.notice .moderate-tooltip').html(error_tooltip)
