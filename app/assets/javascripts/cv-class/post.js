@@ -172,7 +172,7 @@ Class('Post')({
                                 } else { //error -- doesn't work with $.ajax error callback
                                     $('.post-type .tooltip').hide();
                                     $('.media > a').removeClass('active')
-                                    var error_tooltip = '<strong>Error while adding post.</strong><br/><ul>'
+                                    var error_tooltip = '<strong>Error while adding post.</strong><br/><ul class="tooltip-errors">'
                                     for (var i=0;data.errors[i] != null;i++) {
                                         error_tooltip += '<li>' + data.errors[i] + '</li>'
                                     }

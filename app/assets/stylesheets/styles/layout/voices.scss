@@ -147,3 +147,9 @@
 .slider-values > li > .minor-thick-mark {height: 2px}
 .slider-values > li > .minor-thick-mark {width: 3px; height: 2px}
 .slider-values > li > .minor-thick-mark {position: absolute; right: -6px}
+
+.tooltip-errors {
+    list-style-type: disc;
+    font-size: 0.85em;
+    margin-left: 1.5em;
+}
