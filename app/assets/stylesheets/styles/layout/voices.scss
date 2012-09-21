@@ -150,6 +150,15 @@
 
 .tooltip-errors {
     list-style-type: disc;
-    font-size: 0.85em;
+    font-size: 0.8em;
     margin-left: 1.5em;
+    color: #CCCCCC;
+}
+
+.tooltip-close {
+    display: block;
+    font-size: 0.75em;
+    text-align: right;
+    margin: 10px -5px -10px 0;
+    color: #E60000
 }

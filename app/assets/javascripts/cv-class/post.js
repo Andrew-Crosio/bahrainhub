@@ -144,7 +144,7 @@ Class('Post')({
                                     $('.media > a').removeClass('active')
                                     posts_filter.toggleModerator(true);
                                     carousel.clear();
-                                    window.location = '/' + window.currentVoice.slug + '?mod=1'
+                                    window.location = '/' + window.currentVoice.slug + '?mod=1';
 //                                    $.get('/' + window.currentVoice.slug + '/posts/' + data.post.id, function(html) {
 //                                        var post    = $(html);
 //                                        $('.post-type .tooltip').hide();
@@ -171,13 +171,16 @@ Class('Post')({
                                     // TODO: show tooltip confirmation
                                 } else { //error -- doesn't work with $.ajax error callback
                                     $('.post-type .tooltip').hide();
-                                    $('.media > a').removeClass('active')
-                                    var error_tooltip = '<strong>Error while adding post.</strong><br/><ul class="tooltip-errors">'
+                                    $('.media > a').removeClass('active');
+                                    var error_tooltip = '<strong>Error while adding post.</strong><br/><ul class="tooltip-errors">';
                                     for (var i=0;data.errors[i] != null;i++) {
-                                        error_tooltip += '<li>' + data.errors[i] + '</li>'
+                                        error_tooltip += '<li>' + data.errors[i] + '</li>';
                                     }
-                                    error_tooltip += '</li>'
-                                    $('.tooltip.notice .moderate-tooltip').html(error_tooltip)
+                                    error_tooltip += '</ul><a class="tooltip-close">[close]</a>';
+                                    $('.tooltip.notice .moderate-tooltip').html(error_tooltip);
+                                    $('.tooltip.notice .moderate-tooltip .tooltip-close').click(function() {
+                                        $('.tooltip.notice').hide();
+                                    });
                                     $('.tooltip.notice').show();
                                 }
                             }
