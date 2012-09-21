@@ -36,11 +36,10 @@ class Post < ActiveRecord::Base
   mount_uploader :image, PostImageUploader
 
   validates :source_url, :presence => true,
-    :uniqueness => { :case_sensitive => false },
-    :format => { :with => Scrapers::Link.regexp },
-    :if => :uploaded_image?
-  validates :source_type, :presence => true,
-    :inclusion => { :in => %w[video image link] }
+                         :uniqueness => { :case_sensitive => false },
+                         :format => { :with => Scrapers::Link.regexp },
+                         :unless => :uploaded_image?
+  validates :source_type, :presence => true, :inclusion => { :in => %w[video image link] }
   validates :source_service,
     :inclusion => { :in => %w[flickr twitpic yfrog raw youtube vimeo link], :allow_nil => true }
   validate :url_check_blank, :on => :create

@@ -20,10 +20,11 @@ class Voice < ActiveRecord::Base
   has_many :subscriptions, :dependent => :destroy
   has_one :announcement, :dependent => :destroy
 
-  validates_presence_of :title, :description
-  validates_inclusion_of :theme, :in => THEMES
-  validates_format_of :rss_feed, :with => Scrapers::Feed.regexp, :if => :check_rss_feed
-  validates_inclusion_of :background_version, :in => BACKGROUND_VERSIONS
+  validates :title, :presence => true, :uniqueness => true
+  validates :description, :presence => true, :uniqueness => true
+  validates :theme, :presence => true, :inclusion => {:in => THEMES}
+  validates :rss_feed, :format => {:with => Scrapers::Feed.regexp, :message => 'Invalid RSS feed format'}, :if => :check_rss_feed
+  validates :background_version, :inclusion => {:in => BACKGROUND_VERSIONS}
 
   before_save :generate_slug
   before_save :reset_feed_timestamps
