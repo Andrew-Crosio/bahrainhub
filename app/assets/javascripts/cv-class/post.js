@@ -131,7 +131,6 @@ Class('Post')({
             this.form.submit(function () {
                 if(input.val() && (that.constructor.detectUrl(input.val()) || inputFile.val())) {
                     if (this.lastSearch != input.val()){
-
                         $(this).ajaxSubmit({
                             dataType: 'json',
                             type: 'post',
@@ -140,38 +139,42 @@ Class('Post')({
                                     this.lastSearch = input.val();
                                     that.inputFile.val('');
                                     input.val('').blur();
-                                    $.get('/' + window.currentVoice.slug + '/posts/' + data.post.id, function(html) {
-                                        var post    = $(html);
-                                        $('.post-type .tooltip').hide();
-                                        $('.post-button .tooltip').hide();
-                                        $('.media > a').removeClass('active')
-                                        posts_filter.toggleModerator(true);
-                                        carousel.clear();
-
-                                        $('.voices-container').prepend(post);
-                                        post.find('img.thumb-preview').bind('load',function(){
-                                            //if thumbnail bug, hide it
-                                            if ($(this).attr('src').indexOf('thumb_link-default.png') > 0){
-                                                $(this).hide();
-                                            }
-                                            overlays.unbindEvents().bindEvents();
-                                            votes.unbindEvents().bindEvents();
-                                            $('.voices-container')
-                                                .isotope('addItems', post)
-                                                .isotope('reloadItems')
-                                                .isotope({ sortBy: 'original-order' })
-                                                .isotope();
-                                        });
-
-                                    });
+                                    $('.post-type .tooltip').hide();
+                                    $('.post-button .tooltip').hide();
+                                    $('.media > a').removeClass('active')
+                                    posts_filter.toggleModerator(true);
+                                    carousel.clear();
+                                    window.location = '/' + window.currentVoice.slug + '?mod=1'
+//                                    $.get('/' + window.currentVoice.slug + '/posts/' + data.post.id, function(html) {
+//                                        var post    = $(html);
+//                                        $('.post-type .tooltip').hide();
+//                                        $('.post-button .tooltip').hide();
+//                                        $('.media > a').removeClass('active')
+//                                        posts_filter.toggleModerator(true);
+//                                        carousel.clear();
+//
+//                                        $('.voices-container').prepend(post);
+//                                        post.find('img.thumb-preview').bind('load',function(){
+//                                            //if thumbnail bug, hide it
+//                                            if ($(this).attr('src').indexOf('thumb_link-default.png') > 0){
+//                                                $(this).hide();
+//                                            }
+//                                            overlays.unbindEvents().bindEvents();
+//                                            votes.unbindEvents().bindEvents();
+//                                            $('.voices-container')
+//                                                .isotope('addItems', post)
+//                                                .isotope('reloadItems')
+//                                                .isotope({ sortBy: 'original-order' })
+//                                                .isotope();
+//                                        });
+//                                    });
                                     // TODO: show tooltip confirmation
                                 } else { //error -- doesn't work with $.ajax error callback
                                     for(var error in data){
                                         $('.post-type .tooltip').hide();
                                         $('.media > a').removeClass('active')
-
                                         if (data.hasOwnProperty(error) && error == 'source_url'){
-                                            $('.tooltip.notice .moderate-tooltip').html('Url '+data[error])
+                                            $('.tooltip.notice .moderate-tooltip').html('Error while adding post.')
                                             $('.tooltip.notice').show();
                                         }
                                     }

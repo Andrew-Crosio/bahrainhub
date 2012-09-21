@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     if @post.save
       respond_with({:post => @post}, :location => @voice, :status => :success, :content_type => 'text/plain')
     else
-      respond_with({:post => nil}, :location => @voice, :status => :success, :content_type => 'text/plain')
+      respond_with({:post => nil, :errors => @post.errors}, :location => @voice, :status => :success, :content_type => 'text/plain')
     end
   end
 
