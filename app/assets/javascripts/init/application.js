@@ -95,7 +95,7 @@ $(function () {
     });
 
     $('.voice-search input[placeholder]').placeholder();
-    $('.scroller').jScrollPane({ autoReinitialise: true });
+    $('#scrollpane').jScrollPane({ autoReinitialise: true });
     $('.voice-box').css('visibility', 'hidden');
 
     if($('.flash').length) {

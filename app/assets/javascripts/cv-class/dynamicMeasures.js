@@ -19,7 +19,7 @@ Class('DynamicMeasures')({
 
     update: function () {
         var m = this._measure();
-        $('.scroller').height(m.scroller);
+        $('#scrollpane').height(m.scroller);
         $('.tab-controller').css('top', m.tab);
         $('.post > input').width(m.postInput);
         $('.header-sep').css('margin-top', m.headerHeight);

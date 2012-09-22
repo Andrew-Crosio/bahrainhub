@@ -720,7 +720,7 @@ hgroup{
 /* SIDEBAR SCROLL VOICE AREA */
 /*****************************/
 
-.scroller > .voice-sec {
+#scrollpane > .voice-sec {
   background:url($voice-sec) repeat-x;
   border-style:solid;
   border-color: $lightShade-6 transparent $lightShade-2;
@@ -728,11 +728,11 @@ hgroup{
   @include opacity(1);
 }
 
-.scroller > .voice-sec > h2 {
+#scrollpane > .voice-sec > h2 {
   color: darken($txtLight, 38.5);
 }
 
-.scroller > .voice-sec > span {
+#scrollpane > .voice-sec > span {
   background:url($side-arrows) no-repeat;
   background-position: 2px 3px;
   cursor: pointer;
@@ -742,30 +742,30 @@ hgroup{
   background-position: 2px -5px!important;
 }
 
-.scroller > ul > .select,
-.scroller > ul > .select:hover {
+#scrollpane > ul > .select,
+#scrollpane > ul > .select:hover {
   background: url($select-voice) repeat;
 }
 
-.scroller > ul > .select a {
+#scrollpane > ul > .select a {
   color: darken($txtLight, 1);
   border-style: solid;
 }
 
 @each $color in $tColors {
 
-  .scroller > ul > .select.#{nth($color, 1)} a{
+  #scrollpane > ul > .select.#{nth($color, 1)} a{
     background: url(/assets/icons/#{nth($color, 1)}_chat.png) no-repeat;
     background-position: 10px 15px;
   }
 
 }
 
-.scroller > ul > li:hover {
+#scrollpane > ul > li:hover {
   background: url($hover-list) repeat;
 }
 
-.scroller > ul > li a {
+#scrollpane > ul > li a {
   color: darken($txtLight, 71);
   border-style: dotted;
   border-color: $lightShade-2;
@@ -775,22 +775,22 @@ hgroup{
 
 @each $color in $tColors {
 
-  .scroller > ul > .#{nth($color, 1)} a:hover{
+  #scrollpane > ul > .#{nth($color, 1)} a:hover{
     background: url(/assets/icons/#{nth($color, 1)}_chat.png) no-repeat;
     background-position: 10px 15px;
   }
 
 }
 
-.scroller > ul > li a:hover {
+#scrollpane > ul > li a:hover {
   text-decoration: none;
 }
 
-.scroller,.scroller > ul {
+#scrollpane, #scrollpane > ul {
   background: url($scroller-area) repeat-y;
 }
 
-.scroller > .voice-all > li a {
+#scrollpane > .voice-all > li a {
   color: darken($txtLight, 23);
 }
 
@@ -841,14 +841,14 @@ hgroup{
 .down-arrow {
   background-position: 2px -5px !important;
 }
-.scroller .voice-#{$scTk} > .select,
-.scroller .voice-#{$scTk} > .select:hover {
+#scrollpane .voice-#{$scTk} > .select,
+#scrollpane .voice-#{$scTk} > .select:hover {
   background: url($scTk-select) repeat;
   text-shadow: 1px 1px 1px rgba($tBlk, .4);
 }
 
 
-.scroller ul {
+#scrollpane ul {
 
   > .select {
       background: url($select-voice) repeat;
@@ -903,9 +903,9 @@ hgroup{
 
   }
 
-} //.scroller ul
+} //#scrollpane ul
 
-.scroller .voice-#{$scTk} {
+#scrollpane .voice-#{$scTk} {
   > .select a {
     background: url($black-chat) 11px 16px no-repeat !important;
     background-position: 11px 16px;
@@ -921,8 +921,8 @@ hgroup{
   }
 }
 
-.scroller,
-.scroller > ul {
+#scrollpane,
+#scrollpane > ul {
   background: url($scroller-area) repeat-y !important;
 }
 

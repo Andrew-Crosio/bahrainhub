@@ -210,37 +210,32 @@ p > .blog-widget-label {padding: 15px 0}
 
 /* Side Bar Scroll Voice Area */	
 
-.scroller {height: 500px; width: 263px; position: relative; overflow-y: scroll; z-index: 2}
-.scroller .scroller {border: 0}
-.scroller > .voice-sec {padding: 5px 10px 0px 10px; margin: 0; border-width: 1px 0px; height: 18px; font-weight: normal; font-size:12px; width: 228px; overflow: hidden}
+#scrollpane {position: relative; overflow-y: scroll; z-index: 2; border: 0}
+#scrollpane > .voice-sec {padding: 5px 10px 0px 10px; margin: 0; border-width: 1px 0px; height: 18px; font-weight: normal; font-size:12px; width: 228px; overflow: hidden}
 .searchable {cursor: pointer}
 .searchable > ul {display: block}
 .searchable > ul > li {display: block; position: relative}
-.scroller > .voice-sec > h2 {font-size:12px; font-weight: normal; float: left}
-.scroller > .voice-sec > span {float: right; margin-top: 2px; width: 10px; height: 10px; text-indent: -999em}
-.scroller .scroller {border: 0}
-.scroller > ul > li {font-size: 13px}
-.scroller > ul > li a {font-size: 12px; padding:14px 0 14px 35px; display:block; line-height: 1.3; width: 213px; border-width: 0px 0px 1px 0px}
-.scroller > ul > li.last a {border-width: 0px}
-.scroller > .voice-feature > li a {font-weight: bold; font-size: 13px}
-.scroller > .voice-all > li a:hover {font-weight: bold}
+#scrollpane > .voice-sec > h2 {font-size:12px; font-weight: normal; float: left}
+#scrollpane > .voice-sec > span {float: right; margin-top: 2px; width: 10px; height: 10px; text-indent: -999em}
+#scrollpane > ul > li {font-size: 13px}
+#scrollpane > ul > li a {font-size: 12px; padding:14px 0 14px 35px; display:block; line-height: 1.3; width: 213px; border-width: 0px 0px 1px 0px}
+#scrollpane > ul > li.last a {border-width: 0px}
+#scrollpane > .voice-feature > li a {font-weight: bold; font-size: 13px}
+#scrollpane > .voice-all > li a:hover {font-weight: bold}
 .tab-controller {height: 42px; width: 10px; position: fixed; left:268px; top: 300px; cursor: pointer; z-index: 3}
 
 /* Side Bar Custom Scroll Voice Area */	
 
-.jspScrollable {height: 500px; width: 263px; position: relative; overflow-y: scroll}
-.jspScrollable .scroller {border: 0}
 .voice-sec {padding: 5px 10px 0px 10px; margin: 0; border-width: 1px 0px; height: 18px; font-weight: normal; font-size:12px; width: 232px; overflow: hidden}
 .voice-sec > h2 {font-size:12px; font-weight: normal; float: left}
 .voice-sec > span {float: right; margin-top: 2px; width: 10px; height: 10px; text-indent: -999em}
-.jspScrollable .scroller {border: 0}
-.scroller ul > li {font-size: 13px; width: 252px}
-.scroller ul > li a {font-size: 12px; padding:14px 5px 14px 35px; display:block; line-height: 1.3; width: 211px; border-width: 0px 0px 1px 0px}
-.scroller ul > li.last a {border-width: 0px}
-.scroller .voice-gaza > li a,
-.scroller .voice-feature > li a {font-weight: bold; font-size: 13px}
-.scroller .voice-gaza > li a:hover,
-.scroller .voice-all > li a:hover {font-weight: bold}
+#scrollpane ul > li {font-size: 13px; width: 252px}
+#scrollpane ul > li a {font-size: 12px; padding:14px 5px 14px 35px; display:block; line-height: 1.3; width: 211px; border-width: 0px 0px 1px 0px}
+#scrollpane ul > li.last a {border-width: 0px}
+#scrollpane .voice-gaza > li a,
+#scrollpane .voice-feature > li a {font-weight: bold; font-size: 13px}
+#scrollpane .voice-gaza > li a:hover,
+#scrollpane .voice-all > li a:hover {font-weight: bold}
 .tab-controller {height: 42px; width: 10px; position: fixed; left:268px; top: 300px; cursor: pointer; z-index: 3}
 
 /* Overlay Styles */

@@ -21,38 +21,38 @@
         </li>
       </ul>
     </div>
-    <div class="scroller">
-        <div class="searchable">
-          <% cache('aside_menu_bar') do %>
-            <% unless @cities_villages.empty? %>
-              <div class="voice-sec">
-                <h2>Cities & Villages - المدن و القرى</h2>
-                <span class="accordion">more</span>
-              </div>
-              <ul class="voice-feature">
-                <%= render :partial => 'voices/voices', :object => @cities_villages.order('created_at desc') %>
-              </ul>
-            <% end %>
-            <% unless @media_coverage.empty? %>
-              <div class="voice-sec">
-                <h2>Media Coverage - التغطية الإعلامية</h2>
-                <span class="accordion">more</span>
-              </div>
-              <ul class="voice-feature">
-                <%= render :partial => 'voices/voices', :object => @media_coverage.order('created_at desc') %>
-              </ul>
-            <% end %>
-            <% unless @archived_voices.empty? %>
-              <div class="voice-sec">
-                <h2>Archived Voices</h2>
-                <span class="accordion">more</span>
-              </div>
-              <ul class="voice-all">
-                <%= render :partial => 'voices/voices', :object => @archived_voices %>
-              </ul>
-            <% end %>
+    <div id="scrollpane">
+      <div class="searchable">
+        <% cache('aside_menu_bar') do %>
+          <% unless @cities_villages.empty? %>
+            <div class="voice-sec">
+              <h2>Cities & Villages - المدن و القرى</h2>
+              <span class="accordion">more</span>
+            </div>
+            <ul class="voice-feature">
+              <%= render :partial => 'voices/voices', :object => @cities_villages.order('created_at desc') %>
+            </ul>
           <% end %>
-        </div>
+          <% unless @media_coverage.empty? %>
+            <div class="voice-sec">
+              <h2>Media Coverage - التغطية الإعلامية</h2>
+              <span class="accordion">more</span>
+            </div>
+            <ul class="voice-feature">
+              <%= render :partial => 'voices/voices', :object => @media_coverage.order('created_at desc') %>
+            </ul>
+          <% end %>
+          <% unless @archived_voices.empty? %>
+            <div class="voice-sec">
+              <h2>Archived Voices</h2>
+              <span class="accordion">more</span>
+            </div>
+            <ul class="voice-all">
+              <%= render :partial => 'voices/voices', :object => @archived_voices %>
+            </ul>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
