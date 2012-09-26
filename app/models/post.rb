@@ -109,8 +109,8 @@ class Post < ActiveRecord::Base
   def set_source_type
     self.source_type = self.class.detect_type(self.source_url)
     if self.source_type == 'image'
-      self.description = self.image_description if !self.image_description.blank?
-      self.title = self.image_title
+      self.description = self.image_description unless self.image_description.blank?
+      self.title = self.image_title unless self.image_title.blank?
     end
   end
 
@@ -127,7 +127,7 @@ class Post < ActiveRecord::Base
         scraper.scrape do |data|
           self.title = data.title if self.title.blank?
           self.description = data.description if self.description.blank?
-          self.remote_image_url = data.image_url if self.remote_image_url.blank?
+          self.remote_image_url = data.image_url if self.remote_image_url.blank? && self.image.blank?
         end
       rescue Timeout::Error, StandardError
         errors.add(:source_url, :invalid)
