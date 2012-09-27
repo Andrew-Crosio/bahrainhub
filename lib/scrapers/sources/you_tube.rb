@@ -9,6 +9,7 @@ module Scrapers
       attr_accessor :title, :description, :image_url
 
       def initialize(url)
+        url.sub!(/^http/, 'https') if url.start_with? 'http://'
         @url = url
       end
 
