@@ -63,7 +63,7 @@
         </div>
       </li>
       <li class="info-tool rss"><%= link_to '', voice_path(@voice, :format => :rss), :class => 'info-tool-link', :title => 'RSS feed' %></li>
-      <li class="info-tool twitter"><%= link_to '', "http://twitter.com/intent/tweet?text=#{CGI.escape @voice.title}&url=#{CGI.escape voice_url(@voice)}&via=bahrainhub", :target => '_blank', :title => 'Share on Twitter', :class => 'info-tool-link' %></li>
+      <li class="info-tool twitter"><%= link_to '', "http://twitter.com/intent/tweet?text=#{CGI.escape @voice.title}&url=#{CGI.escape voice_url(@voice)}&via=byshr", :target => '_blank', :title => 'Share on Twitter', :class => 'info-tool-link' %></li>
       <li class="info-tool facebook-like-button"><iframe src="https://www.facebook.com/plugins/like.php?app_id=101972966529938&amp;href=<%= CGI.escape voice_url(@voice) %>&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe></li>
     </ul>
     <h4 class="voice-subtitle"><em><%= @voice.description %></em> <a class="more-button"><span>More</span></a></h4>

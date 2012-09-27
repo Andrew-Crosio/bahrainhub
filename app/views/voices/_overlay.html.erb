@@ -17,7 +17,7 @@
       <p>{{time_ago}} ago</p>
       <ul class="actions">
         <li><%= link_to '', "http://facebook.com/sharer.php?u={{post_permalink}}", :class => 'facebook', :target => '_blank' %></li>
-        <li><%= link_to '', "http://twitter.com/intent/tweet?text={{escaped_title}}&url={{post_permalink}}&via=crowdvoice", :class => 'twitter', :target => '_blank' %></li>
+        <li><%= link_to '', "http://twitter.com/intent/tweet?text={{escaped_title}}&url={{post_permalink}}&via=byshr", :class => 'twitter', :target => '_blank' %></li>
         <li class="flag-div">
           <%= link_to '', "/{{voice_slug}}/posts/{{post_id}}/votes.json?rating={{rating}}", :format => :json, :class => "flag overlay-vote-post", :method => :post %>
           <div class="tooltip flag-tip" data-post-id="post_{{post_id}}">
@@ -69,7 +69,7 @@
           <span>{{time_ago}} ago</span>
           <ul class="actions">
             <li><%= link_to '', "http://facebook.com/sharer.php?u={{post_permalink}}", :class => 'facebook', :target => '_blank' %></li>
-            <li><%= link_to '', "http://twitter.com/intent/tweet?text={{escaped_title}}&url={{post_permalink}}&via=crowdvoice", :class => 'twitter', :target => '_blank' %></li>
+            <li><%= link_to '', "http://twitter.com/intent/tweet?text={{escaped_title}}&url={{post_permalink}}&via=byshr", :class => 'twitter', :target => '_blank' %></li>
             <li class="flag-div">
               <%= link_to '', "/{{voice_slug}}/posts/{{post_id}}/votes.json?rating={{rating}}", :format => :json , :class => "flag overlay-vote-post", :method => :post %>
               <div class="tooltip flag-tip" data-post-id="post_{{post_id}}">
