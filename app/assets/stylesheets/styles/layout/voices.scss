@@ -68,7 +68,7 @@
 .voice-action > .actions > li > .flag {float: right}
 .voice-action > .actions > li > .flag-pressed {float: right}
 .voice-action > .actions > li > .flag-over {float: right}
-.close-voice-box {width: 28px; height: 21px; float: right; display: block; position: relative; margin: 4px -3px -18px; z-index:4}
+.close-voice-box {width: 28px; height: 21px; float: right; display: block; position: relative; margin: 4px -3px -18px; z-index:4; border: none; background-color: transparent;}
 
 .discuss {position: fixed; left: 0; bottom: 0; width: 100%; z-index: 5}
 .discuss.closed {height: 35px}

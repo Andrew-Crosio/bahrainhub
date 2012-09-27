@@ -1,7 +1,8 @@
 <% post_url = post.is_raw_image? ? post.image.url : post.source_url %>
 <div class="voice-box <%= post.source_type %> <%= 'unmoderated' unless post.approved? %>" data-post-id="<%= post.id %>" data-created-at="<%= post.created_at.beginning_of_day.to_date %>">
-  <%= link_to '', [@voice, post], :method => :delete, :confirm => 'Are you sure?', :class => 'close-voice-box' if current_user && current_user.is_admin? %>
-
+  <% if current_user && current_user.is_admin? %>
+    <%= button_to '', [@voice, post], :method => :delete, :confirm => 'Are you sure?', :class => 'close-voice-box' %>
+  <% end %>
   <div class="voice-cont">
     <%= link_to post_url, :class => "source-url post-#{post.id}", :'data-type' => post.source_type, :'data-title' => post.title, :'data-permalink' => voice_url(@voice, :post => post.id), :'data-ago' => time_ago_in_words(post.created_at), :'data-id' => post.id, :'data-voted' => false, :'data-service' => post.source_url.nil? ? Post.detect_service(post.source_url) : post.source_url do %>
       <% if post.image %>
