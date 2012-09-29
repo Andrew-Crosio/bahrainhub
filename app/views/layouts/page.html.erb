@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BahrainHub</title>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-
+    <title>BahrainHub - Tracking voices of protest across Bahrain`</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="BahrainHub: Tracking voices of protest across Bahrain" />
+    <meta name="keywords" content="bahrain, protest, protesting, voice, uprising, middle east, injustice, racism, discrimination, segregation, government, rebellion, GCC" />
+    <meta name="robots" content="all" />
     <%= stylesheet_link_tag :page %>
 
     <!-- User ID for hansel -->
@@ -13,7 +15,6 @@
 
     <%= javascript_include_tag :page %>
     <%= csrf_meta_tag %>
-    <%= chartbeat_top %>
     <%= yield(:head) %>
     <link rel="shortcut icon" href="/favicon.ico" />
     <!--[if lt IE 9]>
@@ -39,6 +40,5 @@
     </div>
     <div class="map-container"></div>
     <%= google_analytics %>
-    <%= chartbeat %>
   </body>
 </html>
