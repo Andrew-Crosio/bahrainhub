@@ -93,6 +93,7 @@ class Voice < ActiveRecord::Base
     base_slug.gsub! /œ/, 'ae'
     base_slug.gsub! /ñ/, 'n'
     base_slug.gsub! /[^\w-]/, ''
+    base_slug.gsub! /(?:^-+|-+$)/, ''
     count = 1
     while exists?(:slug => base_slug)
      count += 1
